@@ -1,0 +1,55 @@
+{% extends "content_2_way.html" %}
+{% from "macros.html" import category_link with context %}
+{% from "macros.html" import fixtures with context %}
+
+{% block leftcontent %}
+<div class="gap"></div>
+
+{% if matches is defined %}
+   <h2>Categories</h2>
+   <div class="left-content">
+     {{ category_link(type) }}
+   </div>
+   <div class="gap"></div>
+{% endif %}
+
+<h2>Recent Updates</h2>
+<div class="left-content">
+<ol>
+  <li><span><strong>No Update</strong></span> </li>
+</ol>
+</div>
+
+<div class="gap"></div>
+
+<h2>Contact Us</h2>
+<div class="left-content">
+<ol>
+    <span style="color:black"><strong >For Any Query Email Us :-</strong></span>
+    <li><a href="mailto:pbhansal@ciena.com?Subject=TT%20Tournament%202018" style="color:red" target="_top">Preet Bhansali</a></li>
+    <li><a href="mailto:aagarwal@ciena.com?Subject=TT%20Tournament%202018" style="color:red" target="_top">Aruna Agarwal</a></li>
+</ol>
+</div>
+{% endblock  %}
+
+{% block rightcontent %}
+<div class="row">
+<h2 class="title"><span>{{ page }}
+{% if category %}
+    <span> - {{ category }} </span>
+{% endif %}
+</span></h2>
+ <div class="row2">
+  <br/>
+  {% if matches  is defined%}
+     {{ fixtures(matches) }}
+  {% else %}
+      <h3><strong>Select category:</strong></h3>
+      <br/>
+      {{ category_link(type, spacing=True) }}
+  {% endif %}
+
+ </div>
+</div>
+{% endblock %}
+

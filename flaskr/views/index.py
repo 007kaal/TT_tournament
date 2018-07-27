@@ -2,12 +2,10 @@ from flask import current_app as app, render_template, session, url_for, redirec
 
 @app.route("/")
 def main():
-  if 'username' in session:
-    return redirect(url_for("/play")
-  else :
-    return render_template("index.html")
+  return render_template('index.html')
 
 
-@app.route("/index")
+@app.route("/index.html")
 def index():
-  return redirect(url_for("/"))
+    return redirect(url_for("main"))
+

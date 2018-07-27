@@ -1,0 +1,35 @@
+from csv import DictWriter, DictReader
+
+WS_FILE="../ws.csv"
+MS_FILE="../ms.csv"
+MD_FILE="../md.csv"
+WD_FILE="../wd.csv"
+XD_FILE="../xd.csv"
+
+
+WS = []
+WD = []
+MS = []
+MD = []
+XD = []
+
+
+def read_data():
+  with open(WS_FILE) as csvFile:
+      global WS
+      WS = DictReader(csvFile)
+  with open(MS_FILE) as csvFile:
+      global MS
+      MS = DictReader(csvFile)
+  with open(WD_FILE) as csvFile:
+      global WD
+      WD = DictReader(csvFile)
+  with open(MD_FILE) as csvFile:
+      global MD
+      MD = DictReader(csvFile)
+  with open(XD_FILE) as csvFile:
+      XD = DictReader(csvFile)
+
+
+read_data()
+print(WS, MS, WD, MD, XD)

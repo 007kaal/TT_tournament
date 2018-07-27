@@ -1,0 +1,31 @@
+from datetime import datetime
+from flask import Flask, current_app as app
+from flask_sqlalchemy import SQLAlchemy, TIMESTAMP
+
+db = SQLAlchemy(app)
+
+class MatchType(db.Enum):
+     W-SINGLE = 'W-SINGLE'
+     M-SINGLE = 'M-SINGLE'
+     M-DOUBLE = 'M-DOUBLE'
+     W-DOUBLE = 'W-DOUBLE'
+     MIX-DOUBLE ='MIX-DOUBLE'
+
+
+class matches(db.Model):
+    id = db.Column(db.Integer, primary_key=True, nullable=False, autoincrement=True)
+    team1 = db.Column(db.Integer, nullable=False)
+    team2 =  db.Column(db.Integer, nullable=False)
+    round =  db.Column(db.Integer, nullable=False)
+    next = db.Column(db.Integer)
+    category = db.Column(db.Enum(MatchType))
+    winner = db.Column(db.Integer, default = 0, nullable=False)
+    time = db.Column(TIMESTAMP(timezone = False)
+
+
+
+
+
+
+
+

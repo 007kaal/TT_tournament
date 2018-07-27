@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+<div class="content">
+    <!--Designed by<a target="_blank" href="http://www.htmltemplates.net">
+    <img src="static/images/copyright.gif" class="copyright" alt="html templates">
+    </a>-->
+    <div class="content-in">
+      <div class="left-panel">
+       {% block leftcontent %}
+       {% endblock %}
+      </div>
+      <div class="right-panel">
+         <div class="right-panel-in">
+           {% block rightcontent %}
+           {% endblock %}
+         </div>
+      </div>
+    </div>
+</div>
+{% endblock %}
+
