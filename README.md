@@ -1,4 +1,4 @@
-This projec is opensource web application to display the Tournament/Event Fixtures based on the PYTHON FLASK based framework.
+This project is opensource web application to display the Tournament/Event Fixtures based on the PYTHON FLASK based framework.
 
 Requirements:
 1. Python3
